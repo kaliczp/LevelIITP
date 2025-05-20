@@ -7,4 +7,5 @@ DateTP <- seq.Date(from = as.Date("2017-01-15"),
                    to = as.Date("2022-12-15"),
                    by = "months")
 ## Test plot
-plot(DateTP, TP[,4])
+library(xts)
+plot(xts(TP[,4], DateTP))
