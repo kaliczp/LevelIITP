@@ -23,4 +23,21 @@ names(TPlst) <- c("M01, M03", "M15, M16", "M17", "M19", "M21")
 
 ## Test plot
 ttactual <- 1
-plot(TPlst[[ttactual]][,"T"])
+plot.zoo(TPlst[[ttactual]][,"T"],
+         ylim = c(-10,50),
+         xlab = "", ylab = "Temperature",
+         xaxt = "n",
+         xaxs = "i", yaxs = "i",
+         lwd = 2
+         )
+par(new = TRUE)
+plot.zoo(TPlst[[ttactual]][,"P"],
+         type = "h",
+         col = "blue",
+         ylim = c(240,0),
+         xlab = "", ylab = "",
+         xaxt = "n", yaxt = "n",
+         xaxs = "i", yaxs = "i",
+         lwd = 3
+         )
+axis(4)
