@@ -30,16 +30,19 @@ par(mfrow = c(5,1),
 for(ttactual in 1:length(TPlst)) {
     ## Precipitation
     plot.zoo(TPlst[[ttactual]][,"P"],
-             type = "h",
-             lend = "butt",
-             col = "#67a9cf",
+             type = "n",
              ylim = c(300,0),
              xlab = "", ylab = "",
              xaxt = "n", yaxt = "n",
-             xaxs = "i", yaxs = "i",
-             lwd = 8
+             xaxs = "i", yaxs = "i"
              )
     grid(nx = NA, ny = NULL)
+    lines(as.zoo(TPlst[[ttactual]][,"P"]),
+             type = "h",
+             lend = "butt",
+             col = "#67a9cf",
+             lwd = 8
+             )
     axis(4, at = seq(0,250,50), las = 1)
     if(ttactual == 3)
         mtext("Precipitation", 4, 3)
