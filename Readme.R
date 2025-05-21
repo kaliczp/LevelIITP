@@ -33,13 +33,14 @@ for(ttactual in 1:length(TPlst)) {
              type = "h",
              lend = "butt",
              col = "#67a9cf",
-             ylim = c(240,0),
+             ylim = c(300,0),
              xlab = "", ylab = "",
              xaxt = "n", yaxt = "n",
              xaxs = "i", yaxs = "i",
              lwd = 8
              )
-    axis(4, las = 1)
+    grid(nx = NA, ny = NULL)
+    axis(4, at = seq(0,250,50), las = 1)
     if(ttactual == 3)
         mtext("Precipitation", 4, 3)
     par(new = TRUE)
