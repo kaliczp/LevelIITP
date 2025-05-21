@@ -40,16 +40,20 @@ for(ttactual in 1:length(TPlst)) {
              lwd = 8
              )
     axis(4)
+    if(ttactual == 3)
+        mtext("Precipitation", 4, 3)
     par(new = TRUE)
     ## Temperature
     plot.zoo(TPlst[[ttactual]][,"T"],
              col = "#ef8a62",
              ylim = c(-10,50),
-             xlab = "", ylab = "Temperature",
+             xlab = "", ylab = "",
              xaxt = "n",
              xaxs = "i", yaxs = "i",
              lwd = 3
              )
+    if(ttactual == 3)
+        mtext("Temperature", 2, 3)
 }
 axis.Date(1)
 dev.off()
