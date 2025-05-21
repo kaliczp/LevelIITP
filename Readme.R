@@ -59,6 +59,7 @@ for(ttactual in 1:length(TPlst)) {
     axis(2, at = seq(-10,30,10), las = 1)
     if(ttactual == 3)
         mtext("Temperature", 2, 3)
+    text(as.Date("2017-03-05"), -8, names(TPlst)[ttactual], adj = c(0,0))
 }
 axis.Date(1)
 dev.off()
