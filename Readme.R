@@ -31,6 +31,7 @@ for(ttactual in 1:length(TPlst)) {
     ## Precipitation
     plot.zoo(TPlst[[ttactual]][,"P"],
              type = "h",
+             lend = "butt",
              col = "#67a9cf",
              ylim = c(240,0),
              xlab = "", ylab = "",
