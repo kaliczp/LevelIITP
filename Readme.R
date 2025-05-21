@@ -61,5 +61,6 @@ for(ttactual in 1:length(TPlst)) {
         mtext("Temperature", 2, 3)
     text(as.Date("2017-03-05"), -8, names(TPlst)[ttactual], adj = c(0,0))
 }
-axis.Date(1)
+axis.Date(1, labels = FALSE)
+axis.Date(1, at = as.Date(paste(2017:2022,"07-02", sep = "-")), format = "%Y", tick = FALSE)
 dev.off()
