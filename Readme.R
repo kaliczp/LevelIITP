@@ -39,7 +39,7 @@ for(ttactual in 1:length(TPlst)) {
              xaxs = "i", yaxs = "i",
              lwd = 8
              )
-    axis(4)
+    axis(4, las = 1)
     if(ttactual == 3)
         mtext("Precipitation", 4, 3)
     par(new = TRUE)
@@ -48,10 +48,11 @@ for(ttactual in 1:length(TPlst)) {
              col = "#ef8a62",
              ylim = c(-10,50),
              xlab = "", ylab = "",
-             xaxt = "n",
+             xaxt = "n", yaxt = "n",
              xaxs = "i", yaxs = "i",
              lwd = 3
              )
+    axis(2, at = seq(-10,30,10), las = 1)
     if(ttactual == 3)
         mtext("Temperature", 2, 3)
 }
