@@ -19,8 +19,8 @@ TPlst[[5]] <- xts(TP[,11:12], DateTP)
 for(ttactual in 1:length(TPlst))
     names(TPlst[[ttactual]]) <- c("P","T")
 
-names(TPlst) <- c("M01, M03", "M15, M16", "M17", "M19", "M21")
-
+names(TPlst) <- c("M01, M03", "M15, M16", "M17", "M19", "M21"
+)
 ## Test plot
 pdf()
 par(mfrow = c(5,1),
@@ -29,21 +29,22 @@ par(mfrow = c(5,1),
     )
 for(ttactual in 1:length(TPlst)) {
 plot.zoo(TPlst[[ttactual]][,"T"],
+         col = "#ef8a62",
          ylim = c(-10,50),
          xlab = "", ylab = "Temperature",
          xaxt = "n",
          xaxs = "i", yaxs = "i",
-         lwd = 2
+         lwd = 3
          )
 par(new = TRUE)
 plot.zoo(TPlst[[ttactual]][,"P"],
          type = "h",
-         col = "blue",
+         col = "#67a9cf",
          ylim = c(240,0),
          xlab = "", ylab = "",
          xaxt = "n", yaxt = "n",
          xaxs = "i", yaxs = "i",
-         lwd = 3
+         lwd = 8
          )
 axis(4)
 }
