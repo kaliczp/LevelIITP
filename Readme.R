@@ -1,10 +1,14 @@
 ## Import
 library(readxl)
 TP <- as.data.frame(read_excel("Havi T P Level II 2017-2023.xlsx", skip = 1))
+EndofTS <- 2023
+
+## Years for axis
+YearsforAxis <- as.Date(paste(2017:EndofTS,"01-01", sep = "-"))
 
 ## Date
 DateTP <- seq.Date(from = as.Date("2017-01-15"),
-                   to = as.Date("2023-12-15"),
+                   to = as.Date("EndofTS-12-15"),
                    by = "months")
 
 ## Create list
@@ -61,6 +65,6 @@ for(ttactual in 1:length(TPlst)) {
         mtext("Temperature", 2, 3)
     text(as.Date("2017-03-05"), -8, names(TPlst)[ttactual], adj = c(0,0))
 }
-axis.Date(1, labels = FALSE)
-axis.Date(1, at = as.Date(paste(2017:2023,"07-02", sep = "-")), format = "%Y", tick = FALSE)
+axis.Date(1, at= YearsforAxis, labels = FALSE)
+axis.Date(1, at = YearsforAxis + 366/2, format = "%Y", tick = FALSE)
 dev.off()
