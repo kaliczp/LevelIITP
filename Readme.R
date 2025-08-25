@@ -29,7 +29,7 @@ names(TPlst) <- c("M01, M03", "M15, M16", "M17", "M19", "M21"
 pdf(width = 11/2.54, height = 11/2.54, pointsize = 10)
 par(mfrow = c(5,1),
     mar = c(0,4.1,0,4.1),
-    oma = c(3.1,0,0.5,0)
+    oma = c(2.1,0,0.5,0)
     )
 for(ttactual in 1:length(TPlst)) {
     ## Precipitation
