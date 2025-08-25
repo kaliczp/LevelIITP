@@ -45,7 +45,7 @@ for(ttactual in 1:length(TPlst)) {
              type = "h",
              lend = "butt",
              col = "#67a9cf",
-             lwd = 8
+             lwd = 4
              )
     axis(4, at = seq(0,250,50), las = 1)
     if(ttactual == 3)
